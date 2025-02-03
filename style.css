@@ -1,0 +1,1066 @@
+/* ############################################# Global ##################################################################### */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style: none;
+    outline: none;
+    border: none;
+    scroll-behavior: smooth;
+}
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+section {
+    padding: 50px 80px;
+    max-width: 100%;
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 20px;
+    background: #fff;
+}
+nav .active{
+    background: #fff;
+}
+nav .logo img{
+    width: 77px;
+}
+nav .navigation{
+    display: flex;
+}
+nav .navigation li{
+    position: relative;
+}
+nav .navigation a{
+    font-size: 1rem;
+    padding: 10px 20px;
+    color: #060606;
+    font-weight: 500;
+}
+ul li a i{
+    font-size: 20px;
+    padding: 0 2px;
+    transition: all .4s ease-in-out;
+}
+ul li a:hover i{
+    color: rgb(244, 92, 54);
+}
+nav .navigation a::after {
+    content: "";
+    width: 0%;
+    height: 2px;
+    background: rgb(244,92,54);
+    position: absolute;
+    left: 0;
+    transition: width .4s ease-in-out;
+}
+nav .navigation a::after {
+    bottom: -4px;
+}
+nav .navigation a:hover::after, nav .navigation a.active::after{
+    width: 97%;
+}
+#burger-menu{
+    color: #060606;
+    font-size: 1.6rem;
+    cursor: pointer;
+    z-index: 1000;
+    display: none;
+}
+#burger-menu:hover{
+    color: rgb(244,92,54);
+}
+.inscription{
+    font-weight: 500;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: rgb(244,92,54);
+    border-radius: 7px;
+    transition: .4s ease-in-out;
+    cursor: default;
+}
+.inscription:hover{
+    background-color: rgb(189,56,22);
+}
+.btn{
+    color: #fff;
+    background: rgb(244,92,54);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    border-radius: 6px;
+    transition: all 0.4s ease-in-out;
+}
+.btn:hover{
+    background: rgb(189,56,22);
+    font-size: 1.2rem;
+}
+.section-heading{
+    text-align: center;
+    margin: 3rem 0;
+}
+.section-heading span{
+    font-weight: 500;
+    color: rgb(244,92,54);
+}
+.section-heading h2{
+    font-size: clamp(25px, 4vw, 50px);
+}
+
+/* ########################################## Fieldset ################################################# */
+fieldset{
+    border: 2px solid #23fab2;
+    border-radius: 6px;
+}
+legend{
+    background: #001e4d;
+    border-radius: 4px;
+    padding: 10px 20px;
+    margin: 0 15px;
+    color: #f1f1f1;
+    font-weight: 600;
+    transform: rotate(-6deg);
+    letter-spacing: 1.3px;
+}
+.c11{
+    padding: 30px 0;
+    border-color: rgb(192, 55, 230);
+}
+.c11 legend{
+    transform: rotate(0deg);
+}
+
+/* ################################## Resultat: Box inten Quizz ######################################## */
+.resultat {
+    color: rgb(91, 5, 54);
+    background: rgb(255, 166, 0);
+    width: 100%;
+    max-width: 300px;
+    margin: 2rem auto;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, .3);
+}
+.resultat button {
+    display: block;
+    padding: 0.3rem 0.6rem;
+    background: rgb(91, 5, 54);
+    color: #f1f1f1;
+    border: none;
+    border-radius: 5px;
+    margin: 4px auto;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s ease-in-out;
+}
+.resultat .annuler{
+    display: none;
+}
+.resultat button:hover {
+    background: rgb(91, 5, 54, 0.8);
+}
+.resultat h2 {
+    margin-top: 0.5rem;
+    color: rgb(91, 5, 54);
+    font-size: 14px;
+    margin: 4px 0;
+}
+#score1{
+    margin: 4px 0;
+}
+
+/* ####################################### Quiz mit button  ########################################## */
+.answers {
+    margin-bottom: 20px;
+}
+.abtn {
+    display: block;
+    color: #222;
+    font-weight: 550;
+    width: 100%;
+    margin-top: 5px;
+    padding: 10px;
+    text-align: left;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all .3s;
+}
+.abtn:hover:not([disabled]) {
+    background-color: #222;
+    color: #fff;
+}
+.abtn:disabled{
+    cursor: no-drop;
+}
+.abtn.correct {
+    background-color: #4caf50;
+    color: white;
+}
+.abtn.incorrect {
+    background-color: #f44336;
+    color: white;
+}
+.scores {
+    font-size: 20px;
+    margin-top: 20px;
+    text-align: center;
+    font-weight: 600;
+}
+#reset-btn {
+    display: block;
+    margin-top: 20px;
+    padding: 10px 25px;
+    border-radius: 5px;
+    margin: 0 auto;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.container{
+    max-width: 97%;
+    margin: 0 auto;
+}
+.rep{
+    margin-bottom: 10px;
+}
+#quiz {
+    padding: 20px 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(330px, auto));
+    gap: 1rem;
+    margin: 0 auto;
+    margin-top: 2rem;
+}
+.question h3 {
+    font-size: 20px;
+    color: #001e4d;
+    font-weight: 600;
+}
+.informatik{
+    background-color: #2196f3;
+    padding: 10px 10px 10px;
+    border-radius: 6px;
+}
+
+/* ########################################### Page Home ##################################################################  */
+
+/* Section Mit Bilder als Hintergrund */
+.acc-cont1{
+    position: relative;
+    width: 100%;
+    min-height: calc(100vh - 80px);
+    overflow: hidden;
+    background: no-repeat center / cover url('./images/freepik-export-20250109090233WknJ.png');
+    margin-top: 75px;
+    border-radius: 7px;
+}
+.acc-texte{
+    position: absolute;
+    bottom: 30px;
+    width: 70%;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 7px;
+    padding: 10px 20px;
+    text-align: left;
+}
+.acc-texte h2{
+    font-size: clamp(22px, 3.2vw, 40px);
+    margin: 10px 10px 15px;
+    color: #f1f1f1;
+    font-weight: 700;
+    transition: all 0.4s ease-in-out;
+}
+.acc-texte span{
+    color: rgb(244,92,54);
+}
+.acc-texte h2:hover{
+    font-size: clamp(23px, 3.5vw, 40px);
+    color: rgb(244,92,54);
+}
+.acc-texte p{
+    margin: 10px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+/* Die Beschreibungen und Link uber die unterschiedliche Seiten */
+.acc-conteneur {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, auto));
+    grid-gap: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    align-items: center;
+}
+.acc-box{
+    padding: 20px 15px;
+    border-radius: 3px;
+    color: #f1f1f1;
+    text-align: left;
+    position: relative;
+    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.3);
+    transition: all .4s ease-in-out;
+}
+.acc-box:hover{
+    filter: brightness(1.08);
+}
+.acc-box:nth-child(1){
+    background: #e9cb63;
+}
+.acc-box:nth-child(2){
+    background: #ed9b5f;
+}
+.acc-box:nth-child(3){
+    background: #62bfe6;
+}
+.acc-box div{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.acc-box h3{
+    position: relative;
+    font-size: 2rem;
+    margin: 15px 0;
+    font-weight: 700;
+    transition: all .3s ease-in-out;
+}
+.acc-box h3::after {
+    position: absolute;
+    content: "";
+    width: 30%;
+    height: 3px;
+    background: rgb(244,92,54);
+    left: 0;
+}
+.acc-box h3::after {
+    bottom: -2px;
+}
+.acc-box:hover h3{
+    font-size: 2.1rem;
+}
+.acc-box p {
+    margin: 10px 0 15px;
+    font-size: 1rem;
+    transition: all .3s ease-in-out;
+}
+.acc-box:hover p{
+    font-size: 1.1rem;
+}
+.acc-box a{
+    width: fit-content;
+    margin: 5px 10px;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+/*  Section uber die Beschreibung von unsere Arbeit */
+.acc-uns h2{
+    font-size: clamp(30px, 3.5vw, 40px);
+    text-align: center;
+}
+.acc-uns .acc-cont{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    align-items: center;
+}
+.acc-uns .acc-image{
+    border-radius: 7px;
+    overflow: hidden;
+}
+.acc-image img{
+    width: 100%;
+}
+.acc-cont .acc-text{
+    background-color: #62bfe6;
+    height: 99%;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    border-radius: 7px;
+    padding: 15px 10px;
+    gap: 10px;
+}
+.acc-cont .acc-text p{
+    background: rgba(0, 0, 0, 0.3);
+    color: #f1f1f1;
+    font-size: 15px;
+    margin: 10px 5px;
+    padding: 15px;
+}
+
+/* ############################################# Informatik ############################################ */
+
+/* Section mit Bild, Text und Video uber Computerteile  */
+.informatikes{
+    margin-top: 80px;
+}
+.inf-conteneur1{
+    margin-bottom: 2rem;
+}
+.inf-conteneur1 div img{
+    width: 100%;
+    height: auto;
+    border-radius: 8px;  
+}
+.inf-conteneur2 div, .inf-conteneur1 div{
+    width: 82%;
+    margin: 0 auto;
+}
+.inf-conteneur2 div iframe, .inf-conteneur1 div iframe{
+    width: 100%;
+    height: 400px;
+    border-radius: 8px;
+}
+.infCont2-box1 div{
+    width: 90%;
+    margin: 0 auto 20px;
+}
+.infCont2-box1 div img{
+    width: 100%;
+    height: auto;
+    border-radius: 8px; 
+}
+.inf-conteneur3{
+    position: relative;
+    width: 81%;
+    margin: 2.5rem auto;
+    padding: 15px 10px;
+    background: #fff;
+}
+.inf-conteneur3::after, .inf-conteneur3::before{
+    content: "";
+    position: absolute;
+    width: 40%;
+    height: 30%;
+    z-index: -1;
+    background: rgb(244,92,54);
+}
+.inf-conteneur3::after{
+    bottom: -0.2rem;
+    right: -0.2rem;
+}
+.inf-conteneur3::before{
+    top: -0.2rem;
+    left: -0.2rem;
+}
+.inf-conteneur3 h2{
+    text-align: center;
+    font-size: clamp(25px, 3vw, 35px);
+    font-weight: 650;
+    text-decoration: underline;
+    margin: 3rem 0;
+}
+.inf-conteneur3 .inf-cont3f::first-letter{
+    font-size: 28px;
+    font-weight: 550;
+}
+.inf-conteneur3 p span, .math_first p span{
+    font-size: 18px;
+    font-weight: 560;
+    margin-right: 5px;
+}
+.inf-conteneur3 p, .math_first p{
+    text-align: justify;
+    font-size: 17px;
+    font-weight: 530;
+    margin: 0.9rem 1.2rem;
+}
+
+/* Section Quizz uber die unterschiedlichen  Computerteilen  */
+.inf_quizzform{
+    background-color: #4caf50;
+    border-radius: 10px;
+    margin: 5px 4px;
+    padding: 20px;
+}
+.inf_quizzform .inf_an-container{
+    padding: 15px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    gap: 1rem;
+    margin: 0 auto;
+    margin-top: 2rem;
+}
+.inf_an-container .an-box .an-label {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr 3fr;
+    gap: 8px;
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+    font-weight: 600;
+    padding: 7px;
+}
+.inf_an-container .an-box .an-label label {
+    background-color: #04CEC1;
+    white-space: nowrap;
+    padding: 1px 3px;
+    border-radius: 3px;
+}
+.an-box .an-label input, .an-box1 .an-label input {
+    width: 99%;
+    font-size: 16px;
+    font-weight: 530;
+    padding: 2px 8px;
+    border-radius: 4px;
+    border-bottom: 2px solid #04CEC1;
+}
+.an-label input:focus {
+    border: 2px solid #04CEC1;
+}
+.an-label input.richtig, input.richtig, .math-box1 input.richtig{
+    border: none;
+    border : 2px solid green;
+}
+.an-label input.falsch, input.falsch, .math-box1 input.falsch{
+    border: none;
+    border : 2px solid red;
+}
+input:disabled{
+    cursor: no-drop;
+}
+input[type="text"]:read-only, input[type="number"]:read-only{
+    cursor: no-drop;
+}
+.annuler{
+    display: none;
+}
+
+/* ################################ Naturwissenschaft ################################################## */
+
+/* Section mit Bilder un Texten ueber Tieren */
+.an-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, auto));
+    justify-content: center;
+    gap: 1rem;
+    margin: 0 auto;
+    margin-top: 2rem;
+    transition: display 0.4s ease-in-out;
+}
+.an-container .an-box {
+    transition: transform 0.6s;
+    position: relative;
+    padding: 4px;
+    border-radius: 6px;
+    height: 250px;
+    width: 100%;
+    max-width: 320px;
+    overflow: hidden;
+    box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.2);
+}
+.an-box1 {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+.an-box:nth-child(1) .an-box1 {
+    background: url('./images/dogs-4429513_1920.png') center / cover no-repeat;
+}
+:nth-child(2) .an-box1 {
+    background: url('./images/kittens-3535404_1920.png') center / cover no-repeat;
+}
+.an-box:nth-child(3) .an-box1 {
+    background: url('./images/rabbit-6063733_1920.png') center / cover no-repeat;
+}
+.an-box:nth-child(4) .an-box1 {
+    background: url('./images/birds-2655516_1920.png') center / cover no-repeat;
+}
+.an-box:nth-child(5) .an-box1 {
+    background: url('./images/chickens-2522623_1920.png') center / cover no-repeat;
+}
+.an-box:nth-child(6) .an-box1 {
+    background: url('./images/piglet-3386356_1920.png') center / cover no-repeat;
+}
+.an-box:nth-child(7) .an-box1 {
+    background: url('./images/cow-4352623_1920.png') center / cover no-repeat;
+}
+.an-box:nth-child(8) .an-box1 {
+    background: url('./images/iceland-1747368_1920.png') center / cover no-repeat;
+}
+.an-box:nth-child(9) .an-box1 {
+    background: url('./images/giraffes-1330814_1280.png') center / cover no-repeat;
+}
+.an-box1 .an-giraffe {
+    position: absolute;
+    top: 80%;
+    width: 100%;
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+    font-weight: 600;
+    padding: 3px;
+}
+.an-container .an-box2 {
+    display: none;
+    width: 100%;
+    height: 100%;
+    box-shadow: 1px 4px 5px rgba(0, 0, 0, 0.2);
+    padding: 0.5rem;
+    font-weight: 550;
+    background: rgba(0, 0, 0, .9);
+    color: #f1f1f1;
+    cursor: pointer;
+}
+.an-box:nth-child(even) .an-box2{
+    background: rgb(4, 36, 36);
+}
+.an-container .an-box2 h3{
+    text-align: center;
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1.3px;
+    margin: 5px 0 0;
+}
+.an-box2 p {
+    margin: 6px 10px;
+    font-size: 16px;
+}
+.an-box1.desactive {
+    display: none;
+}
+.an-box2.active {
+    display: block;
+}
+
+/* First Quiz uber Tiere */
+.animale{
+    margin-top: 60px;
+}
+.an-box1 .an-label {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr 3fr;
+    position: absolute;
+    gap: 5px;
+    top: 80%;
+    width: 100%;
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+    font-weight: 600;
+    padding: 3px;
+}
+.an-box1 .an-label label {
+    background-color: rgb(244, 92, 54);
+    padding: 1px 3px;
+    border-radius: 3px;
+}
+.an-box1 .an-label input {
+    width: 100%;
+}
+
+/* ########################################## Mathematik ################################################ */
+
+/*   Section mit Quiz ueber Zahlen */
+.math-container{
+    max-width: 1050px;
+    display: grid;
+    padding: 20px 10px;
+    border-radius: 7px;
+    background: #3ce63f;
+    grid-template-columns: repeat(auto-fit, minmax(360px, auto));
+    gap: 1.5rem;
+    margin: 0 auto;
+}
+.math{
+    background-color: aquamarine;
+    border: none;
+    border-radius: 7px;
+    padding: 10px 15px;
+    transition: all 0.4s ease-in-out;
+}
+.math .math-box1{
+    margin-top: 2px;
+    flex-wrap: nowrap;
+}
+.math-box .math-box1 label:nth-child(odd){
+    display: inline-block;
+    text-align: center;
+    width: 40px;
+    background: #fff;
+    padding: 1px 5px;
+    margin: 2px 5px;
+    border-radius: 4px;
+}
+.math-box .math-box1 label:nth-child(even){
+    margin: 0 5px;
+}
+.math-box1 input {
+    padding: 2px 6px;
+    border-radius: 5px;
+    border-bottom: 2px solid rgb(244, 92, 54);
+}
+.math .math-btn, .math .anulation{
+    margin: 7px 10px 3px;
+    padding: 5px 15px;
+    border-radius: 6px;
+    background: #3ce63f;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    transition: all .5s ease-in-out ;
+}
+.math .anulation{
+    display: none;
+}
+.math .math-btn{
+    transform: translateX(90%);
+}
+.math .math-btn:hover{
+    padding: 5px 18px;
+}
+
+/* Section mit Video und Text uber geometrische Koerper */
+.math_medi{
+    display: grid;
+    grid-template-columns: 1.8fr 2.2fr;
+    gap: 20px 5px;
+}
+.math_medi .math_com1, .math_medi .math_com2{
+    width: 98%;
+    margin: auto;
+}
+.math_medi .math_com1 iframe, .math_medi .math_com2 iframe{
+    width: 100%;
+    min-height: 420px;
+    border-radius: 8px;
+}
+.math_second{
+    display: grid;
+    gap: 1.5rem;
+}
+.math_medi .math_first{
+    background: rgba(0, 0, 0, 0.3);
+    padding: 15px 8px;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+.math_first h2{
+    text-align: center;
+    font-size: clamp(25px, 2.5vw, 30px);
+    font-weight: 650;
+    text-decoration: underline;
+    margin: 2rem 0;
+}
+.math_first .math_p::first-letter{
+    font-size: 26px;
+    font-weight: 550;
+}
+
+/*  Section Quiz ueber geometrische Formen  */
+.math-cont{
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 7px;
+    padding: 10px 15px;
+    position: relative;
+}
+.math-image{
+    position: relative;
+    width: 100%;
+    height: 100px;
+}
+.math-box .math-image img{
+    position: absolute;
+    width: 150px;
+    height: 100px;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+}
+.math-box h3{
+    margin: 8px 0;
+    font-weight: 600;
+    font-size: 22px;
+    color: #fff;
+}
+.math2{
+    background:  #3ce63f;
+    margin: 0 auto;
+    border-radius: 7px;
+    padding-bottom: 5px;
+}
+
+/* ################################  footer ###########################*/
+footer{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+footer .foot_cont1{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    justify-content: center; 
+    padding: 15px 5px;
+    gap: 1rem 0;
+    background: #343a34;
+    color: #fff;
+}
+footer .foot_cont1 article{
+    min-height: 220px;
+}
+footer .foot_cont1 > :not(.art){
+    padding: 15px 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+}
+footer .foot_cont1 article:nth-child(1){
+    padding: 10px 15px 20px;
+}
+footer .foot_cont1 article:nth-child(1) .art{
+    display: grid;
+    grid-template-columns: 0.8fr 2fr;
+    gap: 5px;
+}
+footer .foot_cont1 article:nth-child(1) .art h4{
+    font-size: 22px;
+    margin-top: 18px;
+    white-space: nowrap;
+}
+.foot_cont1 article .art img{
+    width: 70px;
+    float: right;
+}
+footer .foot_cont1 article:nth-child(1) .icones{
+    margin: 15px auto 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    gap: 10px;
+    padding: 5px;
+    width: 80%;
+}
+footer .foot_cont1 article:nth-child(1) div a {
+    background: rgba(0, 0, 0, .3);
+    border-radius: 6px;
+    font-size: 35px;
+    text-align: center;
+    cursor: pointer;
+    color: #FFF;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+footer .foot_cont1 article:nth-child(1) div a:hover {
+    font-size: 40px;
+    color: rgb(189,56,22);
+}
+.foot_cont1 article h3{
+    font-size: 22px;
+    font-weight: 650;
+    letter-spacing: 1.3px;
+    margin-top: 10px;
+}
+.foot_cont1 article ul{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+.foot_cont1 .contact a{
+    cursor: default;
+}
+.foot_cont1 article li a {
+    color: #fff;
+    font-size: 16px;
+    transition: all .4s ease-in-out;
+}
+.foot_cont1 article li a:hover, .foot_cont1 article p:hover{
+    font-size: 18px;
+    color: rgb(244,92,54);
+}
+
+footer .foot_cont2{
+    margin-top: 3px;
+    border-top: 2px solid salmon;
+    display: grid;
+    justify-content: center;
+    padding: 10px  20px;
+}
+footer .foot_cont2 p{
+    font-size: 14px;
+    text-transform: lowercase;
+    white-space: nowrap;
+    font-weight: 550;
+}
+
+
+/* ######################################  Responsif ######################################### */
+
+@media screen and (max-width: 1150px) {
+    section{
+        padding: 80px 45px;
+    }
+    .acc-uns{
+        padding: 50px 15px;
+    }
+    .acc-uns .acc-cont{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+@media screen and (max-width: 1050px){
+    section{
+        padding: 80px 40px;
+    }
+    nav{
+        padding: 1rem;
+    }
+    #burger-menu {
+        display: block;
+    }
+    .navigation {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        flex-direction: column;
+        row-gap: 2rem;
+        width: 280px;
+        min-height: 100vh;
+        box-shadow: 5px 0 5px 0 rgba(0, 0, 0, 0.2);
+        padding: 1rem 0;
+        transition: .2s ease-in-out;
+    }
+    .navigation.active{
+        right: 0;
+    }
+    .math_medi{
+        grid-template-columns: 1fr;
+    }
+    .math_medi .math_first{
+        width: 98%;
+        margin: 0 auto;
+    }
+}
+@media screen and (max-width: 920px){
+    section{
+        padding: 80px 35px;
+    }
+    .inf-conteneur2 div, .inf-conteneur1 div, .inf-conteneur3{
+        width: 89%;
+    }
+}
+@media screen and (max-width: 768px){
+    section{
+        padding: 80px 25px;
+    }
+    .acc-texte{
+        bottom: 8px;
+        padding: 3px 5px;
+        width: 80%;
+    }
+    .inf-conteneur2 div, .inf-conteneur1 div, .infCont2-box1 div, .inf-conteneur3{
+        width: 95%;
+    }
+    .quizzform{
+        padding: 20px 10px;
+    }
+}
+@media screen and (max-width: 664px){
+    .an-container .an-box{
+        width: 350px;
+    }
+}
+@media screen and (max-width: 600px){
+    section{
+        padding: 80px 15px;
+    }
+    .acc-texte{
+        bottom: 8px;
+        padding: 3px 5px;
+        width: 90%;
+    }
+    footer .foot_cont1{
+        padding: 10px;
+    }
+    footer .foot_cont1 article{
+        width: 420px;
+    }
+    .inf-conteneur1 div, .inf-conteneur2 div,
+    .infCont2-box1 div{
+        width: 99%;
+    }
+    .inf-conteneur3{
+        padding: 15px 0;
+        width: 98%;
+    }
+    .inf-conteneur3 p{
+        margin: 0.9rem 5px;
+    }
+    .quizzform{
+        padding: 20px 7px;
+    }
+}
+@media screen and (max-width: 470px){
+    section{
+        padding: 80px 5px;
+    }
+    .inf-conteneur3 p{
+        margin: 0.9rem 5px;
+    }
+}
+@media screen and (max-width: 425px){
+    section{
+        padding: 80px 0;
+    }
+    .acc-texte{
+        bottom: 8px;
+        padding: 3px;
+        width: 98%;
+    }
+    .acc-box{
+        width: 100%;
+    }
+    footer .foot_cont1 article{
+        width: 350px;
+    }
+    .math, .math2{
+        padding: 10px 2px;
+        width: 100%;
+    }
+    .math-container{
+        overflow-x: hidden;
+        padding: 20px 1px;
+    }
+    .math-box h2, .math-box h3{
+        font-size: 20px;
+    }
+}
+@media screen and (max-width: 380px){
+    setion{
+        padding: 80px 0;
+    }
+}
