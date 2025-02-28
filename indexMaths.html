@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>MINT Mathematik</title>
+    <meta name="description" content="Zahlen sind überall in unserem täglichen Leben präsent und was gibt es Schöneres, als zu lernen, 
+    wie man mit ihnen rechnet. Darüber hinaus können Sie einige grundlegende geometrische Formen erlernen.">
+    <link rel="icon" href="./images/logo.png">
+    <meta name="keywords" content="Kinder Entwicklung">
+    <meta name="keywords" content="Lernen und Quizz">
+    <meta name="keywords" content="Mathematik, Zahlen und Geometrische Formen">
+    <meta name="author" content="Ulrich Ngassam & Kebodel Kenne">
+    <meta name="robots" content="index, follow">
+    <meta property="og:locale" content="de_DE">
+</head>
+<body>
+<!-- Navigation -->
+    <nav>
+        <a href="#" class="logo"><img src="./images/Dein_Abschnittstext.png" alt="Kommt und Entdecke MINT"></a>
+        <ul class="navigation">
+            <li><a href="index.html"><i class='bx bx-home'></i>Home</a></li>
+            <li><a href="indexMaths.html" class="active"><i class='bx bxs-cube-alt'></i>Mathematik</a></li>
+            <li><a href="./indexinformatik.html"><i class='bx bx-code-alt'></i>Informatik</a></li>
+            <li><a href="indexNatur.html"><i class='bx bxs-florist'></i>Naturwissenschaft</a></li>  
+        </ul>
+        <div class="btns">
+            <a href="#" class="inscription"><i class='bx bxs-user'></i></a>
+        </div>
+        <div class="bx bx-menu" id="burger-menu"></div>
+    </nav>
+<!-- Section mit Videos uber Berechnungen -->
+    <section class="informatikes medi">
+        <div class="section-heading">
+            <span>Etwas über  Zahlen lernen</span>
+            <h2>Lernen Sie die Zahlen und grundlegenden Operatoren kennen !</h2>
+        </div>
+        <fieldset class="c11">
+            <legend>Wissen sammeln</legend>
+            <div class="inf-conteneur1">
+                <div>
+                    <iframe src="https://www.youtube.com/embed/wZDgSSBg9Rw?si=pZeHWv2U3L_rAjW_" 
+                        title="Dies ist ein YouTube-Video, in dem erklärt wird, wie man Malrechnung und Addition durchführt." 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+            <div class="inf-conteneur2">
+                <div>
+                    <iframe src="https://www.youtube.com/embed/CeGYZ3MK1Fs?si=o0FPGo4I9mUsTrQP" 
+                        title="Dies ist ein YouTube-Video, in dem erklärt wird, wie man Verteilung und Aufteilung durchführt." 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </fieldset>
+    </section>
+<!-- Section mit Quiz ueber Zahlen -->
+    <section class="mathematik">
+        <div class="math-container">
+            <form class="math" id="form-add">
+                <div class="math-box">
+                    <h2>Hier sind ein paar additionen ("+"). Versuch mal es zu loesen</h2>
+                    <div class="math-box1">
+                        <label for="math-in11">2</label>
+                        <label for="math-in11">+</label>
+                        <label for="math-in11">3</label>
+                        <label for="math-in11">=</label>
+                        <input type="number" id="math-in11">
+                    </div>
+                    <div class="math-box1">
+                        <label for="math-in12">5  </label>
+                        <label for="math-in12">+</label>
+                        <label for="math-in12">6  </label>
+                        <label for="math-in12">=</label>
+                        <input type="number" id="math-in12">
+                    </div>
+                    <div class="math-box1">
+                        <label for="math-in13">11 </label>
+                        <label for="math-in13">+</label>
+                        <label for="math-in13">20 </label>
+                        <label for="math-in13">=</label>
+                        <input type="number" id="math-in13">
+                    </div>
+                    <div class="math-box1">
+                        <label for="math-in14">20 </label>
+                        <label for="math-in14">+</label>
+                        <label for="math-in14">50 </label>
+                        <label for="math-in14">=</label>
+                        <input type="number" id="math-in14">
+                    </div>
+                </div>
+               <button type="button" class="anulation">Reset</button>
+                <button type="submit" class="math-btn">Antworten Bestätige</button> 
+            </form>
+            <form class="math" id="form-sous">
+                <div class="math-box">
+                     <h2>Hier sind ein paar Sustration ("-"). Versuch mal es zu loesen</h2>
+                    <div class="math-box1">
+                        <label for="math-in21">5 </label>
+                        <label for="math-in21">-</label>
+                        <label for="math-in21"> 2</label>
+                        <label for="math-in21"> =  </label>
+                        <input type="number" id="math-in21">
+                    </div>
+                    <div class="math-box1">
+                        <label for="math-in22">10 </label>
+                        <label for="math-in22">-</label>
+                        <label for="math-in22"> 3</label>
+                        <label for="math-in22"> =  </label>
+                        <input type="number" id="math-in22">
+                    </div>
+                    <div class="math-box1">
+                        <label for="math-in23">100 </label>
+                        <label for="math-in23">-</label>
+                        <label for="math-in23"> 20</label>
+                        <label for="math-in23"> =  </label>
+                        <input type="number" id="math-in23">
+                    </div>
+                    <div class="math-box1">
+                        <label for="math-in24">80 </label>
+                         <label for="math-in24">-</label>
+                        <label for="math-in24"> 15</label>
+                        <label for="math-in24"> =  </label>
+                        <input type="number" id="math-in24">
+                    </div>
+                </div>
+                <button type="button" class="anulation">Reset</button>
+                <button type="submit" class="math-btn">Antworten Bestätige</button>
+            </form>
+            <form class="math" id="form-div">
+                <div class="math-box">
+                    <h2>Hier sind ein paar Division ("/"). Versuch mal es zu loesen</h2>
+                    <div class="math-box1">
+                        <label for="math-in31">6 </label>
+                        <label for="math-in31">/</label>
+                        <label for="math-in31"> 3</label>
+                        <label for="math-in31"> =  </label>
+                        <input type="number" id="math-in31">
+                    </div>
+                    <div class="math-box1">
+                        <label for="math-in32">12 </label>
+                        <label for="math-in32">/</label>
+                         <label for="math-in32"> 2</label>
+                        <label for="math-in32"> =  </label>
+                        <input type="number" id="math-in32">
+                    </div>
+                    <div class="math-box1">
+                        <label for="math-in33">100 </label>
+                        <label for="math-in33">/</label>
+                        <label for="math-in33"> 20</label>
+                         <label for="math-in33"> =  </label>
+                        <input type="number" id="math-in33">
+                    </div>
+                    <div class="math-box1">
+                        <label for="math-in34">50 </label>
+                        <label for="math-in34">/</label>
+                        <label for="math-in34"> 2</label>
+                        <label for="math-in34"> =  </label>
+                       <input type="number" id="math-in34">
+                    </div>
+                </div>
+                <button type="button" class="anulation">Reset</button>
+                <button type="submit" class="math-btn">Antworten Bestätige</button>
+            </form>
+            <form class="math" id="form-mul">
+                <div class="math-box">
+                    <h2>Hier sind ein paar Multiplication ("*"). Versuch mal es zu loesen</h2>
+                    <div class="math-box1">
+                        <label for="math-in41">2 </label>
+                        <label for="math-in41">*</label>
+                        <label for="math-in41"> 3</label>
+                        <label for="math-in41"> =  </label>
+                        <input type="number" id="math-in41">
+                     </div>
+                    <div class="math-box1">
+                        <label for="math-in42">5 </label>
+                        <label for="math-in42">*</label>
+                        <label for="math-in42"> 6</label>
+                       <label for="math-in42"> =  </label>
+                        <input type="number" id="math-in42">
+                    </div>
+                    <div class="math-box1">
+                        <label for="math-in43">10 </label>
+                        <label for="math-in43">*</label>
+                        <label for="math-in43"> 20</label>
+                        <label for="math-in43"> =  </label>
+                        <input type="number" id="math-in43">
+                    </div>
+                    <div class="math-box1">
+                        <label for="math-in44">2 </label>
+                        <label for="math-in44">*</label>
+                        <label for="math-in44"> 50</label>
+                        <label for="math-in44"> =  </label>
+                        <input type="number" id="math-in44">
+                    </div>
+                </div>
+                <button type="button" class="anulation">Reset</button>
+                <button type="submit" class="math-btn">Antworten Bestätige</button>
+            </form>
+        </div>
+    </section>    
+<!-- Section mit Video und Text uber geometrische Koerper -->
+    <section class="informatikes medi">
+        <div class="section-heading">
+            <span>Etwas über  geometrische Formen lernen</span>
+            <h2>Entdecken Sie einige geometrische Formen aus dem Alltag !</h2>
+        </div>
+        <fieldset class="c11">
+            <legend>Wissen sammeln</legend>
+            <div class="math_medi">
+                <div class="math_first">
+                    <h2>Was ist den ein Geometrische Körper? </h2>
+                    <p class="math_p">
+                        Geometrische Körper sind dreidimensionale Objekte, die in der Mathematik eine wichtige Rolle 
+                        spielen. Sie haben Länge, Breite und Höhe und lassen sich anhand ihrer Eigenschaften wie Flächen, 
+                        Kanten, Ecken und Oberflächen unterscheiden. Hier sind einige der bedeutendsten geometrischen 
+                        Körper und ihre grundlegenden Merkmale:
+                    </p>
+                    <p><span>Der Quader</span>
+                        Ein Quader ist ein rechteckiger Körper, dessen Flächen ausschließlich Rechtecke sind. Er hat 
+                        sechs Flächen, die paarrweise parallel und gleich groß sind. Ein Quader besitzt acht Ecken und 
+                        zwölf Kanten.
+                    </p>
+                    <p><span>Der Würfel</span>
+                        Er ist ein Spezialfall des Quaders, bei dem alle Flächen gleich große Quadrate sind. Deshalb 
+                        sind auch alle Kanten gleich lang. Ein Würfel hat ebenso sechs Flachen, acht Ecken und zwölf 
+                        Kanten.
+                    </p>
+                    <p><span>Die Pyramide</span>
+                        Sie ist ein geometrischer Körper, der eine Grundfläche und eine Spitze besitzt. Die Seitenflächen 
+                        sind Dreiecke, die sich an der Spitze treffen. Die Form der Grundfläche bestimmt den Typ der Pyramide, 
+                        etwa eine Dreieckspyramide oder eine quadratische Pyramide.
+                    </p>
+                    <p><span>Der Zylinder</span>
+                        Er ist ein Körper mit zwei parallelen, kongruenten Kreisen als Grund- und Deckfläche. 
+                        Die Seitenfläche ist eine gekrümmte Fläche, die die beiden Kreise miteinander verbindet. Ihr Volumen
+                        wird berechnet, indem man die Fläche der Grundfläche mit der Höhe multipliziert.
+                    </p>
+                    <p><span>Das Prisma</span>
+                        Es ist ein Körper, der zwei parallele, kongruente Grundflächen hat, die durch rechteckige 
+                        Seitenflächen verbunden sind. Prismen können unterschiedliche Grundflächenformen haben, wie Dreiecke,
+                        Fünfecke oder andere Polygone.
+                    </p>
+                    <p>
+                        Jeder dieser Körper hat spezifische mathematische Eigenschaften und wird in der Geometrie, 
+                        Architektur, Technik und im Alltagsleben genutzt. Sie dienen als Grundlage für das Verständnis 
+                        von Raum und Struktur und sind ein wesentlicher Bestandteil der mathematischen Bildung. <br>
+                        Wenn Sie noch mehr über diesen Bereich erfahren möchten, finden Sie hier einige Videos, 
+                        die für Sie nützlich sein werden.
+                    </p>
+                </div>
+                <div class="math_second">
+                    <div class="math_com1">
+                        <div>
+                            <iframe src="https://www.youtube.com/embed/AlMijEXV23s?si=qxEFWUMQDeqrOAg8" 
+                                title="Dies ist ein YouTube-Video, in dem erklärt wird, was ein geometrischer Körper ist, 
+                                        und ausserdem stellt man die verschiedenen Eigenschaften dieses Körpers vor, wie ZB Ecke, Kante
+                                        Fleache und Name." 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                    <div class="math_com2">
+                        <div>
+                            <iframe src="https://www.youtube.com/embed/OjL6ZEK7sC8?si=a1Q1h6eDJvI2CHA2" 
+                                title="Dies ist ein YouTube-Video, in dem unterschiedliche geometrische Körper vorgestellt werden, 
+                                        wie Würfel, Pflastersteine, Zylinder usw. Ausserdem werden Ihre Eigenschaften gegeben." 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </section>
+<!-- Section Qui ueber geometrische Formen -->
+    <section>
+        <form class="math2" id="mathform2">
+            <div class="math-container">
+                <div class="math-box math-cont">
+                    <div class="math-image">
+                        <img src="./images/Dein_Abschnittstext-5.png" alt="Das ist ein Quadrat">
+                    </div>
+                    <h3>Diese geometrische Form ist ein...</h3>
+                    <div class="math-box2">
+                        <input type="radio" name="q1" id="q1a" value="a" checked>
+                        <label for="q1a">Dreieck</label><br>
+                        <input type="radio" name="q1" id="q1b" value="b">
+                        <label for="q1b">Quadrat</label><br>
+                       <input type="radio" name="q1" id="q1c" value="c">
+                        <label for="q1c">Kreis</label><br>
+                        <input type="radio" name="q1" id="q1d" value="d">
+                        <label for="q1d">Rechteckt</label>
+                    </div>
+                </div>
+                <div class="math-box math-cont">
+                    <div class="math-image">
+                        <img src="./images/Dein_Abschnittstext-4.png" alt="Das ist ein Rechteckt">
+                    </div>
+                    <h3>Diese geometrische Form ist ein...</h3>
+                    <div class="math-box2">
+                        <input type="radio" name="q2" id="q2a" value="a" checked>
+                        <label for="q2a">Quadrat</label><br>
+                        <input type="radio" name="q2" id="q2b" value="b">
+                        <label for="q2b">Dreieck</label><br>
+                        <input type="radio" name="q2" id="q2c" value="c">
+                        <label for="q2c">Kreis</label><br>
+                        <input type="radio" name="q2" id="q2d" value="d">
+                        <label for="q2d">Rechteckt</label>
+                   </div>
+                </div>
+                <div class="math-box math-cont">
+                    <div class="math-image">
+                        <img src="./images/Dein_Abschnittstext-3.png" alt="Das ist ein Dreieck">
+                    </div>
+                    <h3>Diese geometrische Form ist ein...</h3>
+                    <div class="math-box2">
+                        <input type="radio" name="q3" id="q3a" value="a" checked>
+                        <label for="q3a">Linie</label><br>
+                        <input type="radio" name="q3" id="q3b" value="b">
+                        <label for="q3b">Trapez</label><br>
+                        <input type="radio" name="q3" id="q3c" value="c">
+                        <label for="q3c">Dreieck</label><br>
+                        <input type="radio" name="q3" id="q3d" value="d">
+                        <label for="q3d">Rechteckt</label>
+                    </div>
+                </div>
+                <div class="math-box math-cont">
+                    <div class="math-image">
+                        <img src="./images/Dein_Abschnittstext-2.png" alt="Das ist ein Raute">
+                    </div>
+                    <h3>Diese geometrische Form ist ein...</h3>
+                   <div class="math-box2">
+                        <input type="radio" name="q4" id="q4a" value="a" checked>
+                        <label for="q4a">Raute</label><br>
+                        <input type="radio" name="q4" id="q4b" value="b">
+                         <label for="q4b">Pentagon</label><br>
+                        <input type="radio" name="q4" id="q4c" value="c">
+                        <label for="q4c">Kreis</label><br>
+                        <input type="radio" name="q4" id="q4d" value="d">
+                        <label for="q4d">Rechteckt</label>
+                    </div>
+                </div>
+                <div class="math-box math-cont">
+                    <div class="math-image">
+                        <img src="./images/Image_14.jpeg" alt="Das ist ein Parallelogramm">
+                    </div>
+                    <h3>Diese geometrische Form ist ein...</h3>
+                    <div class="math-box2">
+                        <input type="radio" name="q5" id="q5a" value="a" checked>
+                        <label for="q5a">Parallelogramm</label><br>
+                        <input type="radio" name="q5" id="q5b" value="b">
+                        <label for="q5b">Dreieck</label><br>
+                        <input type="radio" name="q5" id="q5c" value="c">
+                        <label for="q5c">Trapez</label><br>
+                        <input type="radio" name="q5" id="q5d" value="d">
+                        <label for="q5d">Raute</label>
+                    </div>
+                </div>
+                <div class="math-box math-cont">
+                   <div class="math-image">
+                        <img src="./images/Image_17.jpeg" alt="Das ist ein Hexagon">
+                    </div>
+                    <h3>Diese geometrische Form ist ein...</h3>
+                    <div class="math-box2">
+                         <input type="radio" name="q6" id="q6a" value="a" checked>
+                        <label for="q6a">Octagon</label><br>
+                        <input type="radio" name="q6" id="q6b" value="b">
+                        <label for="q6b">Hexagon</label><br>
+                        <input type="radio" name="q6" id="q6c" value="c">
+                        <label for="q6c">Kreis</label><br>
+                        <input type="radio" name="q6" id="q6d" value="d">
+                        <label for="q6d">Parallelogramm</label>
+                    </div>
+                </div>
+            </div>
+            <div class="resultat">
+                <button type="submit">Antworten bestätigen </button>
+                <h2>Bestätigen Sie Ihre Antworten, um das Ergebnis zu sehen</h2>
+                <p class="score"></p>
+                <button class="annuler" type="button">Wiederholen</button>
+            </div>
+        </form>
+    </section>
+<!-- Footer -->
+    <footer>
+        <div class="foot_cont1">
+            <article class="footer-box art">
+                <div class="art">
+                    <div><img src="./images/logo.png" alt="Komm mach MINT: Ist der unsere Logo"></div>
+                    <h4>Komm Mach MINT</h4>
+                </div>
+                <div class="icones">
+                    <a href="https://www.instagram.com/le_walaboss?igsh=MTNxdWVocWxybmh1Zw%3D%3D&utm_source=qr"><i class='bx bxl-instagram' ></i></a>
+                    <a href="https://discord.gg/XzP6T8a2"><i class='bx bxl-discord-alt'></i></a>
+                    <a href="https://x.com/1erboss?s=11&t=KOy5vZFu6GqneUncwXF2jw"><i class='bx bxl-twitter'></i></a>
+                    <a href="https://youtube.com/@ulrichngassam7269?si=vAb-91PCF5MSBqwR"><i class='bx bxl-youtube'></i></a>
+                </div>
+            </article>
+            <article>
+                <h3>Quick Link</h3>
+                <ul class="navig_footer">
+                    <li><a href="index.html"><i class='bx bx-link-alt'></i> Home</a></li>
+                    <li><a href="indexMaths.html"><i class='bx bx-link-alt'></i> Mathematik</a></li>
+                    <li><a href="indexinformatik.html"><i class='bx bx-link-alt'></i> Informatik</a></li>
+                    <li><a href="indexNatur.html"><i class='bx bx-link-alt'></i> Naturwissenschaft</a></li>
+                </ul>
+            </article>
+            <article>
+                <h3>Our Contacts</h3>
+                <ul>
+                    <li class="contact"><a href="#">Kebodel Kenne</a></li>
+                    <li class="contact"><a href="#">+4917610700600</a></li>
+                    <li class="contact"><a href="#">Ulrich Ngassam</a></li>
+                    <li class="contact"><a href="#">+4917610066000</a></li>
+                </ul>   
+            </article>
+            <article>
+                <h3>Our Locations</h3>
+                <p>Germany</p>
+                <p>Cameroon</p>
+                <p>France</p>
+                <p>Malabo</p>
+            </article>
+        </div>
+        <div class="foot_cont2">
+            <div>
+                <p>&copy;Komm mach MINT 2025 all rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="mainMaths.js"></script>
+</body>
+</html>
